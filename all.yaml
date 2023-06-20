@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-app
+spec:
+  ports:
+  - port: 80
+    targetPort: 8080
+  selector:
+    app: demo-app
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-app
+  template:
+    metadata:
+      labels:
+        app: demo-app
+    spec:
+      containers:
+      - image: ghcr.io/ravisoundar/demo-app:5010d7860edf85ed13c2a0d68d87e13c9654dbb2
+        name: demo-app
+        ports:
+        - containerPort: 8080
