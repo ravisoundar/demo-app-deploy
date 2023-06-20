@@ -6,4 +6,4 @@ resources:
 
 images:
 - name: ghcr.io/ravisoundar/demo-app
-  newTag: b10da5d761f0b075be24fe1ef18fb9b42aa18435
+  newTag: 5010d7860edf85ed13c2a0d68d87e13c9654dbb2
